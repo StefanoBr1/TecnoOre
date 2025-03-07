@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro Ore TECNOELETTRA</title>
+    <style>
+        body {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px; /* Evita che la tabella diventi troppo larga */
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        input {
+            width: 100%;
+            max-width: 700px; /* Evita che siano troppo larghi */
+            box-sizing: border-box;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            max-width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        /* Stile per dispositivi piccoli */
+        @media screen and (max-width: 600px) {
+            th, td {
+                font-size: 14px;
+                padding: 5px;
+            }
+
+            input {
+                font-size: 14px;
+                max-width: 100%;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+<body> 
+    <table>
+        <tbody>
+            <tr>
+                <td><h2 style="font-size:xx-large;">Walter Salvador</h2></td>
+                <td style="width:400px;"></td>
+                <td><button id="salvaBtn">Salva</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <table>
+        <td >
+            <table border="1">
+                <td >
+    <table>
+        <tbody>
+        <tr >
+            <th style="font-size:x-large">Cliente</th>
+            <th style="font-size:x-large">Commessa</th>
+            <th style="width:30%; font-size:x-large"></th>
+            <th style="font-size:x-large">Ore</th>
+        </tr>
+        <tbody>
+            <td><input style ="text-align:center; font-size:large" type="text" id="cliente0" /></td>
+            <td><input style="text-align:center; font-size:large" type="text" id="commessa0" /></td>
+            <td style=" width:30%; font-size:x-large"></td>
+            <td><input style="text-align:center; font-size:large" type="number" id="ore0"  min="0" step="0.5" /></td> 
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <td style="font-size:x-large">Lavoro svolto</td>
+            <td><input style="text-align:center; width:100%; font-size:large" type="text"  id="lavorosvolto0" /></td>
+        </tbody>
+    </table>
+ 
+</td>
+</tbody>
+    <table border="1">
+        <td >
+    <table>
+        <tbody>
+        <tr >
+            <th style="font-size:x-large">Cliente</th>
+            <th style="font-size:x-large">Commessa</th>
+            <th style="width:30%; font-size:x-large"></th>
+            <th style="font-size:x-large">Ore</th>
+        </tr>
+        <tbody>
+            <td><input style ="text-align:center; font-size:large" type="text" id="cliente1" /></td>
+            <td><input style="text-align:center; font-size:large" type="text" id="commessa1" /></td>
+            <td style=" width:30%; font-size:x-large"></td>
+            <td><input style="text-align:center; font-size:large" type="number" id="ore1"  min="0" step="0.5" /></td> 
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <td style="font-size:x-large">Lavoro svolto</td>
+            <td><input style="text-align:center; width:100%; font-size:large" type="text"  id="lavorosvolto1" /></td>
+        </tbody>
+    </table>
+
+</td>
+</tbody>
+    <table border="1">
+        <td >
+    <table>
+        <tbody>
+        <tr >
+            <th style="font-size:x-large">Cliente</th>
+            <th style="font-size:x-large">Commessa</th>
+            <th style="width:30%; font-size:x-large"></th>
+            <th style="font-size:x-large">Ore</th>
+        </tr>
+        <tbody>
+            <td><input style ="text-align:center; font-size:large" type="text" id="cliente2" /></td>
+            <td><input style="text-align:center; font-size:large" type="text" id="commessa2" /></td>
+            <td style=" width:30%; font-size:x-large"></td>
+            <td><input style="text-align:center; font-size:large" type="number" id="ore2"  min="0" step="0.5" /></td> 
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <td style="font-size:x-large">Lavoro svolto</td>
+            <td><input style="text-align:center; width:100%; font-size:large" type="text"  id="lavorosvolto2" /></td>
+        </tbody>
+    </table>
+ 
+</td>
+</tbody>
+</td>
+</tbody>
+</table>
+
+<script>
+window.onload = function () {
+    alert("Se vedi questo messaggio, il file è eseguito con JavaScript attivo!");
+};
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("salvaBtn").addEventListener("touchstart", function() {
+            document.getElementById("cliente0").value = 'jgjg'; // Usa document.getElementById
+            salvaDati();
+        });
+    
+        document.getElementById("salvaBtn").addEventListener("click", function() {
+            document.getElementById("cliente0").value = 'jgjg'; // Anche per click normale
+            salvaDati();
+        });
+    });
+        async function salvaDati() {
+           
+       let testo = "";
+       for (let i = 0; i < 10; i++) {
+           if (ore0.value) {
+               let cliente = cliente0.value;
+               let commessa = commessa0.value;
+               let lavorosvolto = lavorosvolto0.value;
+               let ore = ore0.value ;
+               if (i == 0) {
+                   testo += `Walter Salvador: Cliente: ${cliente}, Commessa: ${commessa}, Lavoro Svolto: ${lavorosvolto}, Ore: ${ore}`;
+               } else {
+                    testo += `\nWalter Salvador: Cliente: ${cliente}, Commessa: ${commessa}, Lavoro Svolto: ${lavorosvolto}, Ore: ${ore}`;
+               }
+           }
+           
+       }
+       lavorosvolto1.value = testo;
+       
+    if (testo === "") {
+        alert("Nessun dato da salvare!");
+        return;
+    }
+
+    try {
+        const response = await fetch('https://caricaorepcloud.tecnoelettra-stefano.workers.dev', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'text/plain',
+                'Accept': '*/*'  //  Risolve problemi su Safari
+            },
+            body: testo,
+            mode: 'cors',  //  Necessario per Safari
+            cache: 'no-cache', //  Evita problemi di cache su iOS
+            credentials: 'same-origin' //  Migliora compatibilità con alcuni server
+        });
+
+        if (!response.ok) {
+            throw new Error(`Errore HTTP: ${response.status}`);
+        }
+
+        alert('Dati salvati con successo!');
+    } catch (error) {
+        console.error("Errore nella richiesta:", error);
+        alert('Errore di connessione. Controlla la tua rete.');
+    }
+}
+   </script>
+</body>
+
+</html>
